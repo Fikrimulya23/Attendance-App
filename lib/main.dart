@@ -1,5 +1,8 @@
-import 'package:attendance_app/main_map.dart';
+import 'package:attendance_app/home/views/home_page.dart';
+import 'package:attendance_app/splash_screen.dart';
 import 'package:flutter/material.dart';
+
+String name = "Fikri Mulya";
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Attendance App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainMap(),
+      // home: const HomePage(),
+      home: SplashScreen(),
     );
   }
 }
