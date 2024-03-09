@@ -220,10 +220,13 @@ class _AddAttendancePageState extends State<AddAttendancePage> {
     var masterlat = await Preferences.getDouble(Preferences.masterLat);
     var masterLong = await Preferences.getDouble(Preferences.masterLong);
     if (masterlat != null) {
+      Position position = await getMyLocation();
+
+      var myLocation = LatLng(position.latitude, position.longitude);
       masterLocation = LatLng(masterlat, masterLong!);
 
       CameraPosition newCameraPosition = CameraPosition(
-        target: masterLocation,
+        target: myLocation,
         zoom: 19,
       );
       final GoogleMapController controller = await _controller.future;

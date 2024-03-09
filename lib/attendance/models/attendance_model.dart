@@ -18,7 +18,7 @@ class AttendanceModel {
 }
 
 List<AttendanceModel> listAttendance = [
-  AttendanceModel(
+  /* AttendanceModel(
     id: 1,
     name: name,
     dateTime: DateTime(2024, 02, 08, 9, 25),
@@ -31,5 +31,5 @@ List<AttendanceModel> listAttendance = [
     dateTime: DateTime(2024, 03, 08, 9, 30),
     isApproved: true,
     latLng: LatLng(-6.2779281, 106.8021154),
-  ),
+  ), */
 ];

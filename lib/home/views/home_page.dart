@@ -54,16 +54,26 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: listAttendance.length,
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                itemBuilder: (context, index) {
-                  final attendanceModel = listAttendance[index];
-                  return attendaceContainer(attendanceModel, context);
-                },
-              ),
-            )
+            (listAttendance.isEmpty)
+                ? Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                    child: Text(
+                      "Data not found",
+                      style: TextStyle(
+                        color: Colors.grey.shade500,
+                      ),
+                    ),
+                  )
+                : Expanded(
+                    child: ListView.builder(
+                      itemCount: listAttendance.length,
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                      itemBuilder: (context, index) {
+                        final attendanceModel = listAttendance[index];
+                        return attendaceContainer(attendanceModel, context);
+                      },
+                    ),
+                  )
           ],
         ),
       ),
